@@ -10,9 +10,9 @@ namespace cse465 {
             // TODO:   implement the map operation, which you 
             //         should be familiar with already from scheme
             //         But use a loop -- not recursion!
-            List<R> result = new List<R>();
+            List<R> result = new List<R>(theList.Count);
             foreach(T item in theList) {
-                result.add(f(item));
+                result.Add(f(item));
             }
             
             return result;
