@@ -11,6 +11,9 @@ namespace cse465 {
             //         should be familiar with already from scheme
             //         But use a loop -- not recursion!
             List<R> result = new List<R>();
+            foreach(T item in theList) {
+                result.add(f(item));
+            }
             
             return result;
         }
@@ -24,6 +27,9 @@ namespace cse465 {
             //       for each item in the list, in reverse order:
             //           init = f(item, init)
             //       return init
+            for (int i = values.Count - 1; i >= 0; i--) {
+                init = f(values[i], init);
+            }
             
             return init;
         }
@@ -63,6 +69,8 @@ namespace cse465 {
             NumberHandler handler = null;      
             // TODO -- add printIfEvens to the delegate `handler`
             // TODO -- add printIfPositive to the delegate `handler`
+            handler += printIfEven;
+            handler += printIfPositive;
 
             // This demonstrates the way delegate can be used as callbacks in C#
             foreach (int n in numbers) {
